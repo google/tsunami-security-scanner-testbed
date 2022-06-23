@@ -34,7 +34,7 @@ import (
 var (
 	sshUser     = flag.String("user", "root", "Allowed user for the fake ssh service.")
 	sshPassword = flag.String("password", "qwerty", "Configured password for the fake ssh service.")
-	sshPort     = flag.Int("port", 22, "Default port to run ssh server at.")
+	sshPort     = flag.Int("port", 8022, "Default port to run ssh server at.")
 )
 
 func main() {
