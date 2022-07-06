@@ -1,0 +1,10 @@
+load("@bazel_gazelle//:def.bzl", "gazelle")
+load("@io_bazel_rules_docker//go:image.bzl", "go_image")
+
+# gazelle:prefix github.com/google/tsunami-security-scanner-testbed
+gazelle(name = "gazelle")
+
+go_image(
+    name = "fake_ssh_server_go_image",
+    binary = "//truepositives/secure/fakessh",
+)

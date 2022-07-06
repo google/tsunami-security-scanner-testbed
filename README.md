@@ -3,6 +3,10 @@
 This project aims to provide a central repository for example services and
 applications for testing Tsunami Security Scanner plugins' detection capability.
 
+## Contributing
+
+Read how to [contribute to Tsunami](docs/contributing.md).
+
 ## Source Code Headers
 
 Every file containing source code must include copyright and license

@@ -11,5 +11,9 @@ configured to any local bash shell session.
 
 The instruction below exposes the fake SSH service at port 8022.
 
-// TODO(b/233797477): add instructions to directly use published docker image or use bazel to build.
+```sh
+git clone https://github.com/google/tsunami-security-scanner-testbed.git
+cd tsunami-security-scanner-testbed
+bazel run //:fake_ssh_server_go_image
+```
 
