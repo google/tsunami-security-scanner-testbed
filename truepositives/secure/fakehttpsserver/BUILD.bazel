@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "fakehttpsserver_lib",
+    srcs = ["fakehttpsserver.go"],
+    importpath = "github.com/google/tsunami-security-scanner-testbed/truepositives/secure/fakehttpsserver",
+    visibility = ["//visibility:private"],
+    deps = ["@org_golang_x_crypto//ssh:go_default_library"],
+)
+
+go_binary(
+    name = "fakehttpsserver",
+    embed = [":fakehttpsserver_lib"],
+    visibility = ["//visibility:public"],
+)
