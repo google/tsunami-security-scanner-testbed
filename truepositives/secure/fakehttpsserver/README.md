@@ -1,6 +1,8 @@
 # Fake HTTPS Server
 
-This is an example HTTPS server.
+This is an example HTTPS server. When scanned by Tsunami Scanner, this service
+will trigger a directory traversal finding from its
+[Apache HTTP Server 2.4.49 Path traversal and disclosure vulnerability - CVE_2021_41773]
 
 This server terminates connections right after a successful handshake.
 

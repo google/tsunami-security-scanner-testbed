@@ -33,12 +33,20 @@ import (
 )
 
 func main() {
-
 	var certificate = GenerateSSLCert()
 
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", func(w http.ResponseWriter, req *http.Request) {
+
 		if req.URL.Path != "/" {
+
+			// This is the file which exposes the registered users on a server
+			// that can be used by attackers to capture sensitive information.
+			// Exposing this directory simulates a path traversal vulnerability.
+			if req.URL.Path == "/etc/passwd" {
+				fmt.Fprintf(w, "root:x:0:0:root")
+				return
+			}
 			http.NotFound(w, req)
 			return
 		}
@@ -55,7 +63,6 @@ func main() {
 
 // GenerateSSLCert is responsible for providing a self signed certificate
 func GenerateSSLCert() tls.Certificate {
-
 	// Generating a private key which will also be used to sign the certificate
 	privateKey, err := rsa.GenerateKey(rand.Reader, 1024)
 	if err != nil {
