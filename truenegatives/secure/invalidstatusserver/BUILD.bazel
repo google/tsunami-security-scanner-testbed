@@ -1,0 +1,14 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "invalidstatusserver_lib",
+    srcs = ["invalidstatusserver.go"],
+    importpath = "github.com/google/tsunami-security-scanner-testbed/truenegatives/secure/invalidstatusserver",
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "invalidstatusserver",
+    embed = [":invalidstatusserver_lib"],
+    visibility = ["//visibility:public"],
+)
