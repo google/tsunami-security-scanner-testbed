@@ -10,6 +10,11 @@ go_image(
 )
 
 go_image(
+    name = "fake_https_server_go_image",
+    binary = "//truepositives/secure/fakehttpsserver",
+)
+
+go_image(
     name = "invalid_status_server_go_image",
     binary = "//truenegatives/secure/invalidstatusserver",
 )

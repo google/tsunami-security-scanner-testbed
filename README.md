@@ -3,6 +3,21 @@
 This project aims to provide a central repository for example services and
 applications for testing Tsunami Security Scanner plugins' detection capability.
 
+## Run Test Servers Locally
+
+**One-time setup**: [Install bazel](https://bazel.build/install)
+
+Build different application images with bazel:
+
+```sh
+git clone https://github.com/google/tsunami-security-scanner-testbed
+cd tsunami-security-scanner-testbed
+
+bazel run fake_ssh_server_go_image
+bazel run fake_https_server_go_image
+bazel run invalid_status_server_go_image
+```
+
 ## Contributing
 
 Read how to [contribute to Tsunami](docs/contributing.md).
